@@ -1,0 +1,43 @@
+package exceptionhandlingHandledExamples.com;
+import java.util.Scanner;
+public class HandlingException {
+	void fun1()
+	{
+		System.out.println("Connection 2 is Established");
+		Scanner scanner = new Scanner(System.in);
+		try
+		{
+			System.out.println("Enter numerator: ");
+			int a = scanner.nextInt();
+			System.out.println("Enter denominator: ");
+			int b = scanner.nextInt();
+			int c = a/b;
+			System.out.println(c);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception handled in fun1");
+		}
+		System.out.println("Connection 2 is terminated");
+	}
+	
+	public static void main(String[] args)
+	{
+		System.out.println("Connection 1 is Established");
+		HandlingException he = new HandlingException();
+		he.fun1();
+		System.out.println("Connection 1 is terminated");
+	}
+
+}
+
+---------OUTPUT OF THIS CODE-----------
+Connection 1 is Established
+Connection 2 is Established
+Enter numerator: 
+9
+Enter denominator: 
+0
+Exception handled in fun1
+Connection 2 is terminated
+Connection 1 is terminated
